@@ -1,0 +1,18 @@
+select "std"
+select "ounit"
+include "formating.dgn"
+select "files"
+looptime=0
+f = fopen("output.txt","w")
+func StartTest() {
+	i = 0
+	while looptime < 3 {
+		i++
+	writeLine(f,setSpacing(i,"austin rules + \n"))
+		looptime++
+		}
+	
+fclose(f)
+}
+
+StartTest()

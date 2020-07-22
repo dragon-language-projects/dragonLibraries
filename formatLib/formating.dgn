@@ -1,0 +1,21 @@
+select "std"
+/*
+name: austin heisley cook
+date:7/21/20
+base formating library for dragon
+*/
+func setSpacing(num, text) {
+start = 0
+
+
+while start <= num {
+start++ 
+}
+
+
+echo(" "*start,text)
+}
+
+
+
+
