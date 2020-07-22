@@ -1,0 +1,25 @@
+select "robot"
+select "std"
+func say(msg) {
+ shell_exec("espeak "+ msg)
+}
+
+show("enter a msg:")
+userMsg = readln()
+while userMsg != "quit"{	
+	echo("enter a msg:")
+	userMsg = readln()
+	if(userMsg.length <= 0) {
+	say("not_a_valid_entry")
+	sleep(23)
+	}
+	if(userMsg == "hello") {
+	say("hello I am dragon speech")
+	}
+	else{
+	say(userMsg)
+	
+	sleep(23)
+	}
+	}
+say(userMsg)
