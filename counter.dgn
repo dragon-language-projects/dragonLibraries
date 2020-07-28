@@ -5,14 +5,16 @@ END = 100
 prices = [1.23,5.00]
 zips = ['2333','4993']
 run = true
+item = ""
 isDone = false
 while isDone == false {
     showln "choose from memu"
-    show "\n1. getinput \n2. readfile\n3. quit\n\nenter a choice"
+    show "\n1. getinput \n2. readfile\n3. quit\n\nenter a choice: "
     userChoice = readln()
     if(userChoice == 1) 
     {
         recordInput()
+        
     }
     if(userChoice == 2) 
     {
@@ -33,7 +35,8 @@ show "Enter a zip"
 userZip = readln()
 i = 0
 price = 0.00
-
+show("enter a item to deliver")
+item = readln()
 while  i < length(zips) {
 
 if(zips[i] == userZip) {
@@ -48,12 +51,12 @@ i++;
 
 }
 test = fopen("deliveries.txt","w+")
-writeLine(test,userZip + ": $" +  price)
+writeLine(test,userZip + ": $" +  price + " item: " + item2)
 echo("$",price)
 fclose(test)
 show "do you want to try another zipcode"
 ask = readln()
-if(ask == "no"){
+if(ask == "no")  ask == "n"){
 run = false
 }
 }

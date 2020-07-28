@@ -17,5 +17,8 @@ echo(" "*start,text)
 }
 
 
+setSpacing(2,"test")
+
+
 
 
