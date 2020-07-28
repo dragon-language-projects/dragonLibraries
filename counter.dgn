@@ -1,0 +1,66 @@
+select "std"
+select "types"
+select "files"
+END = 100
+prices = [1.23,5.00]
+zips = ['2333','4993']
+run = true
+isDone = false
+while isDone == false {
+    showln "choose from memu"
+    show "\n1. getinput \n2. readfile\n3. quit\n\nenter a choice"
+    userChoice = readln()
+    if(userChoice == 1) 
+    {
+        recordInput()
+    }
+    if(userChoice == 2) 
+    {
+        readData()
+    }
+    if(userChoice == 3){
+        isDone = true
+    }
+    else {
+        echo(userChoice," is not a valid choice")
+    }
+}
+
+func recordInput() {
+
+while run == true {
+show "Enter a zip"
+userZip = readln()
+i = 0
+price = 0.00
+
+while  i < length(zips) {
+
+if(zips[i] == userZip) {
+    echo("delivered at", zips[i], "for",prices[i])
+    price=prices[i]
+    break
+}
+else {
+    echo(userZip,"is not a valid zip")
+}
+i++;
+
+}
+test = fopen("deliveries.txt","w+")
+writeLine(test,userZip + ": $" +  price)
+echo("$",price)
+fclose(test)
+show "do you want to try another zipcode"
+ask = readln()
+if(ask == "no"){
+run = false
+}
+}
+}
+func readData() {
+DataFace = fopen("deliveries.txt","+r") 
+filedata = readText(DataFace)
+echo(filedata) 
+}
+
